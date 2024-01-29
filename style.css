@@ -176,6 +176,7 @@ button {
   background-color: hsl(271, 36%, 24%);
   padding: 0.5em 0.8rem;
   color: hsl(0, 0%, 100%);
+  cursor: pointer;
 }
 
 /* sent end */
@@ -263,5 +264,12 @@ button {
 @media screen and (width < 400px) {
   .container {
     flex-direction: column;
+    padding: 1em;
+  }
+  .phone-container {
+    margin-left: 0;
+  }
+  .second-section p {
+    width: 100%;
   }
 }
