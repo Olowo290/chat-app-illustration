@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: 'Rubik', sans-serif;
+}
+
+.phone-container,
+.second-section {
+  position: relative;
+  z-index: 2;
+}
+.container {
+  display: flex;
+  gap: 10em;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: hsl(0, 0%, 100%);
+}
+.container:after,
+.container::before {
+  content: '';
+  height: 100%;
+  width: 300px;
+  position: absolute;
+  z-index: 1;
+  border-radius: 0 0 200px 200px;
+}
+/* fot the backgtound */
+.container::after {
+  background-image: linear-gradient(hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+  left: -10px;
+  top: -10%;
+}
+.container::before {
+  background-color: hsl(270, 20%, 96%);
+  right: 0;
+  bottom: -20%;
+  transform: rotate(180deg);
+}
+/* phone illustrator */
+.phone-container {
+  margin-left: 20px;
+  background-color: hsl(0, 0%, 100%);
+  padding: 1em;
+  box-shadow: 1px 1px 20px hsla(271, 36%, 24%, 0.2);
+  border-radius: 3em;
+  max-width: 350px;
+}
+
+/* purple top and everything inside */
+
+.top-purple {
+  background-image: linear-gradient(
+    to right,
+    hsl(264, 100%, 61%),
+    hsl(293, 100%, 63%)
+  );
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em;
+  padding-top: 2.5em;
+  border-radius: 3em 3em 0.7em 0.7em;
+  position: relative;
+}
+.top-purple::after {
+  /* the white at the top*/
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 20px;
+  background-color: hsl(0, 0%, 100%);
+  top: 0;
+  left: 29%;
+  border-radius: 0 0 10px 10px;
+}
+
+i {
+  color: hsl(0, 0%, 100%);
+  font-size: 1.6rem;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-pic {
+  width: 40px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid hsl(0, 0%, 100%);
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+
+.name {
+  font-size: 1.6rem;
+  color: hsl(276, 100%, 81%);
+  font-weight: bold;
+}
+
+/* Message section */
+.message-section {
+  background: hsl(270, 20%, 96%);
+  position: relative;
+  font-size: 1.2rem;
+  padding: 1em;
+  border-radius: 0 0 2em 2em;
+}
+
+.sent p,
+.receive p {
+  padding: 0.6em;
+}
+/* sent */
+.dogs {
+  margin-bottom: 1em;
+}
+.dog {
+  opacity: 0;
+  animation: dogsFadeIn 2s ease forwards;
+}
+.sent {
+  width: 200px;
+  margin-left: auto;
+}
+.sent p {
+  margin-left: auto;
+  width: 90%;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 1px 1px 0 0 8px hsla(271, 36%, 24%, 0.2);
+  margin-bottom: 1em;
+  border-radius: 0.8em 0.8em 0.4em 0.8em;
+}
+.sent p:last-child {
+  text-align: right;
+  margin-right: 5px;
+  width: fit-content;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+}
+
+.chat-box {
+  position: relative;
+}
+
+input[type='text'] {
+  width: 100%;
+  padding: 0.5em;
+  border-color: transparent;
+  border-radius: 1.3em;
+}
+input[type='text']::placeholder {
+  color: hsl(206, 6%, 79%);
+}
+
+button {
+  position: absolute;
+  top: 0.3em;
+  right: 0.3em;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: hsl(271, 36%, 24%);
+  padding: 0.5em 0.8rem;
+  color: hsl(0, 0%, 100%);
+}
+
+/* sent end */
+
+/* receive */
+
+.receive p:not(.amount) {
+  width: 60%;
+  background-color: hsl(276, 100%, 81%);
+  margin-bottom: 1em;
+  color: hsl(276, 55%, 52%);
+}
+
+.amount-cont,
+.receive p {
+  border-radius: 0.8em 0.8em 0.8em 0.4em;
+}
+
+.amount-cont {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  background-image: linear-gradient(
+    to right,
+    hsl(264, 100%, 61%),
+    hsl(293, 100%, 63%)
+  );
+  margin-bottom: 1em;
+  padding: 0.6em;
+}
+.amount {
+  width: fit-content;
+  margin-left: auto;
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: hsl(0, 0%, 100%);
+}
+
+.message-section img {
+  width: 60px;
+  aspect-ratio: 1;
+  border-radius: 1em;
+}
+
+/* Second section */
+.second-section p {
+  width: 420px;
+  color: hsl(270, 7%, 64%);
+  font-size: 1.6rem;
+  margin-top: 1em;
+  line-height: 1.5;
+}
+.second-section h1 {
+  color: hsl(271, 36%, 24%);
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.attribution {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-top: 4em;
+  position: relative;
+  z-index: 999;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
+
+/* animation */
+
+@keyframes dogsFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media screen and (width < 400px) {
+  .container {
+    flex-direction: column;
+  }
+}
